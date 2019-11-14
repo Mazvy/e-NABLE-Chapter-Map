@@ -1,0 +1,207 @@
+/* ---- clean css ---- */
+
+*, body, div, dl, dt, dd, ul, ol, li, 
+h1, h2, h3, h4, h5, h6, pre, form,
+fieldset, input, textarea, p, th,
+td, blockquote {
+   margin: 0px;
+   padding: 0px;
+   box-sizing: border-box;
+}
+
+fieldset, img { 
+   border: 0; 
+}
+
+/* ---- page css ---- */
+
+html {
+   margin: 0;
+   padding: 0;
+   height: 100%;
+   font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+body {
+   margin: 0px; 
+   padding: 0px;
+   height: 100%;
+   background: #d0cfd4;
+}			
+
+#map {
+	background: #d0cfd4;
+}
+
+.leaflet-div-icon {
+	background: none !important;
+	border: none !important;
+}			
+
+.chapterMarker {
+	background: #fff;			
+	max-width: 36px;
+	height: 36px;
+	border-radius: 36px;
+	display: inline-block;
+	position: relative;
+	box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.2);
+	cursor: pointer;	
+	animation: fadeIn .8s;
+	transition: all .7s;	
+	transition-delay: 0s;	
+	opacity: 1;
+}
+
+.chapterMarker:hover {
+	max-width: 300px;	
+	transition-delay: .3s;	
+	z-index: 2;
+}
+
+.chapterMarker::before {
+	content: '';
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 10px 12px 0 12px;
+	border-color: white transparent transparent transparent;
+	bottom: -5px;
+	left: 6px;
+	position: absolute;
+}
+
+.chapterMarker img {
+	height: 30px;
+	border-radius: 50%;
+	margin: 3px 5px 0 3px;
+	display: inline-block;
+	position: relative;
+	float: left;
+}
+
+.chapterMarker span {
+	display: block;
+	margin: 10px 10px 0 40px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.leaflet-div-icon:hover {
+	z-index: 99999999 !important;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		margin-top: -30px;
+	}
+}
+
+.chapterTitle {
+	white-space: nowrap;
+   display: flex;
+   align-items:center;
+}
+
+.chapterTitle img {
+	margin-right: 10px;
+}
+
+.chapterTitle h2 {
+	font-size: 15px;
+	white-space: nowrap;
+	margin-bottom: 5px;
+}
+
+.chapterTitle h3 {
+	font-size: 12px;
+	white-space: nowrap;
+	font-weight: normal;
+	color: #272727;
+}
+
+/*.leaflet-popup-content-wrapper {
+	width: auto;
+	min-width: 400px;
+}*/
+
+.leaflet-popup-content {
+	width:auto !important;
+}
+
+.chapterHeader {
+	display: inline-block;
+	white-space: nowrap;
+}
+
+.breakFlex {
+	flex-basis: 100%;
+	height: 0;
+}
+
+.chapterDetails {
+	border-spacing: 0px;
+	margin-top: 10px;
+}
+
+.chapterDetails td {
+	white-space: nowrap;
+	padding: 5px 0;
+}
+
+.chapterDetails tr td:first-child {
+	color: #727272;
+	padding-right: 15px;
+}
+
+.leaflet-popup {
+	margin-bottom: 60px;
+}
+
+.leaflet-popup-tip-container {
+	display: none;
+}
+
+.leaflet-popup-content {
+	max-width: 100vw;
+}
+
+#findChapter {
+	padding: 10px 30px;
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 9999999;
+	cursor: pointer;
+	background: rgba(255,255,255,.6);
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	font-weight: bold;
+	color: rgba(0,0,0,.5);
+	transition: all .5s;
+	display: none;
+}
+
+#findChapter:hover {
+	color: rgba(0,0,0,1);
+	background: rgba(255,255,255,.9);
+}
+
+#loading {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 20px;
+	color: rgba(0,0,0,.4);
+	text-shadow: 1px 1px 0px rgba(255,255,255,.8);
+}
+
+.leaflet-pane, .leaflet-control-container {
+	display: none;
+}
